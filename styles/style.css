@@ -46,27 +46,28 @@ body {
 /* 우선순위 규칙 */
 /* li (Type Selector) - 1점 */
 /* .first (Class Selector) - 10점 */
-/* #item(ID Selector) - 100점 */
+/* #item (ID Selector) - 100점 */
 
-/* .member → 10점, li → 1점, ::before → 1점 => 12점 */
+/* .member -> 10점, li -> 1점, ::before -> 1점  => 12점  */
 /* .member li::before {
   content: ":";
 } */
-/* .first → 10점, ::before → 1점 => 11점 */
-/* .member .first::before{
+/* .member -> 10점, .first -> 10점, ::before -> 1점  => 21점  */
+/* .member .first::before {
+  content: "첫번째 자식요소를 생성합니다.";
+} */
+/* .member li:first-child::before {
   content: "";
 } */
-/* .member li:first-child::before{
-  content: "";
-} */
-/* .member li:nth-child(n+2):nth-child(-n+4) {
-  content:":";
-  background-color: yellow;
-} */
-.member li::before {
-  /* content: "\e800"; */
-  /* font-family: fontello; */
 
+/* .member li:nth-child(n + 2)::before {
+  content: ":";
+  background-color: skyblue;
+} */
+
+.member li::before {
+  content: "\e800";
+  font-family: fontello;
 }
 
 /* 비주얼 */
