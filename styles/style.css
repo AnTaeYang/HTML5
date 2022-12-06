@@ -1,5 +1,15 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  background-color: yellow;
+  /* display: none; << 아예 숨기는 기능이라 x */
+  /* visibility: hidden; << 존재는 하지만 투명망토 */
+  position: absolute;
+  top: -9999em;
+}
+
 /* 기본 스타일(*=유니버셜 셀렉터) */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -35,7 +45,7 @@ body {
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
+  /* height: 15vh; 작업간 높이 임의 지정 */
   border-radius: 0 0 15px 15px;
   position: relative;
   }
