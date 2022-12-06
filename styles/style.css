@@ -3,25 +3,17 @@
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
-  background-color: red;
-  /* display: none; << 아예 숨기는 기능이라 x */
-  /* visibility: hidden; << 존재는 하지만 투명망토 */
   position: absolute;
   width: 1px;
   height: 1px;
-  /* 넘치는 부분은 숨긴다 */
   overflow: hidden;
-  /* 마스킹 기법 구형 브라우저 지원 x*/
   clip-path: polygon(0 0, 0 0, 0 0);
-  /* clip: rect(0 0 0 0); 구형일시 */
-  /* 모바일에서 안되는 이슈가 있음 */
-  /* opacity: 0: 투명 */
-  /* 포커스가 읽을수가 없음 */
-  /* color: transparent; <<컬러 투명색 */
 }
 
-/* 기본 스타일(*=유니버셜 셀렉터) */
-*, *::before, *::after {
+/* 기본 스타일 */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -37,36 +29,41 @@ a {
 
 /* 본문 스타일 */
 body {
-  /* em, rem 단위를 사용해보기 em: rem: */
+  /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
   background: #ccc;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  font-weight: 500;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-/* 레이아웃 (그룹화)*/
-.header, .visual, .main, .slogan, .footer_inner {
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 /* 헤더 */
 .header {
   background: #fff;
   padding: 0 30px;
-  /* height: 15vh; 작업간 높이 임의 지정 */
   border-radius: 0 0 15px 15px;
   position: relative;
-  }
+}
 
 /* 로고 */
 .logo {
   position: absolute;
   top: 45px;
   left: 60px;
-  
 }
+
 /* 텍스트 링크 모음 */
 .member {
   text-align: right;
@@ -74,9 +71,10 @@ body {
   /* position 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   /* position: relative;
   right: -10px; */
-    /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
-    transform: translateX(10px);
+  /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
+  transform: translateX(10px);
 }
+
 .member li {
   display: inline-block;
 }
@@ -93,8 +91,19 @@ body {
 } */
 
 .divider {
-margin-right: 4px
+  margin-right: 4px;
+}
 
+/* 메인 메뉴 */
+.menu {
+  background: #e85e2c
+    linear-gradient(
+      to bottom,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%
+    );
 }
 
 /* 비주얼 */
@@ -108,12 +117,6 @@ margin-right: 4px
   height: 50vh;
   display: flow-root;
   padding: 0 15px;
-
-}
-.main::after {
-  content:"";
-  clear: both;
-  display: block;
 }
 
 .group {
@@ -125,25 +128,14 @@ margin-right: 4px
   background-color: violet;
   width: 250px;
 }
-
 .group2 {
   background-color: salmon;
   width: 380px;
 }
-
 .group3 {
   background-color: gold;
   width: 190px;
 }
-
-/* .main::before {
-  content: "첫 번째 자식 요소 입니다.";
-}
-.main::after {
-  content: "마지막 자식 요소 입니다.";
-} */
-
-
 
 /* 슬로건 */
 .slogan {
@@ -155,8 +147,7 @@ margin-right: 4px
 .footer {
   background: gray;
 }
-
-.footer_inner{
-  height: 15vh;
+.footer-inner {
   background: silver;
+  height: 15vh;
 }
