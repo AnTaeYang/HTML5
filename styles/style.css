@@ -122,15 +122,29 @@ body {
   border-left: 2px solid #fff;
 }
 
+/* 구체성 점수 10점 */
+
 .menu-button {
   border: 0;
   background: transparent;
-  padding: 0 23px;
+  padding: 0px 23px;
   line-height: 45px;
   font-size: 15px;
   font-weight: 700;
   color: #fff;
   text-shadow: 1px 1px 0px #000, -1px -1px 0px #000;
+}
+
+/* 구체성 점수 20점 */
+
+.is-active .menu-button {
+  color: yellow;
+}
+
+.is-active .menu-button::after {
+  content: "";
+  display: block;
+  border-top: 2px solid #212121;
 }
 
 .sub-menu {
