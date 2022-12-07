@@ -1,3 +1,4 @@
+@import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
 
@@ -63,6 +64,7 @@ body {
   position: absolute;
   top: 45px;
   left: 60px;
+  z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
@@ -97,7 +99,7 @@ body {
 
 /* 메인 메뉴 */
 .navigation {
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .menu {
@@ -149,10 +151,10 @@ body {
 }
 
 .sub-menu {
-  background-color: pink;
   position: absolute;
   top: 47px;
   display: none;
+  padding: 4px 0;
 }
 
 .menu-html,
@@ -162,7 +164,7 @@ body {
 }
 
 .menu-accessibility,
-.meun-qna,
+.menu-qna,
 .menu-archive {
   right: 0;
 }
@@ -174,15 +176,69 @@ body {
 
 .sub-menu li {
   display: inline-block;
-  padding-left: 1em;
-  background-color: gold;
+}
+
+.sub-menu a::before {
+  content: "\e805";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e801";
+}
+
+.sub-menu a {
+  display: inline-block;
+  padding: 6px 0;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus {
+  color: #f00;
 }
 
 /* 비주얼 */
-.visual {
-  background: orange;
-  height: 10vh;
+@keyframes moveEffect {
+  0% {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    transform: translate(400px, 75px);
+  }
 }
+
+.visual {
+  background: pink;
+  height: 120px;
+  position: relative;
+}
+
+.visual-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: coral;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+}
+
 /* 메인 */
 .main {
   background: lightgreen;
