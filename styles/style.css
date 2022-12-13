@@ -650,14 +650,18 @@ body {
   border-bottom: 1px solid #aaa;
 }
 
+.event-title {
+  display: inline-block;
+}
+
 .event-button-wrapper {
-  background-color: yellow;
   height: 20px;
   overflow: hidden;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   gap: 5px;
+  float: right;
 }
 
 /* IR 기법 -> Image Replacement */
@@ -665,28 +669,26 @@ body {
   width: 19px;
   height: 18px;
   border: 0;
-  /* 글자 숨기기 패딩 트릭 */
   padding: 18px 0 0 0;
-  background: url(./images/back_forward.png);
-  /* background-image: url(./images/back_forward.png);
-  background-repeat: no-repeat;
-  display:block;
-  text-indent:-9999px;
-  line-height:0;
-  Font-size:1px; */
-}
-
-.event-button.focus {
-  outline-offset: -2px;
+  background: url(./images/back_forward.png) no-repeat;
 }
 
 .event-button-next {
   background-position: -36px 0;
 }
 
+.event-button:focus {
+  outline-offset: -2px;
+}
+
 .event-thumbnail,
 .event-brief {
   margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
 }
 
 .event-brief {
@@ -699,7 +701,13 @@ body {
 
 .related-list {
   background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
   margin-top: 10px;
+}
+
+.related-list:hover,
+.related-list:focus {
 }
 
 /* 슬로건 */
