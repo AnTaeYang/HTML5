@@ -736,24 +736,20 @@ body {
 }
 
 .favorite-list {
-  background-color: yellow;
   list-style-type: none;
-  counter-reset: number;
 }
 
 .favorite-list li {
   margin-top: 10px;
   counter-increment: number;
-  background-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  position: relative;
 }
 
 .favorite-list li::before {
   content: counter(number);
   background-color: #aaa;
   color: #fff;
+  border: 1px solid #000;
   font-size: 1.2rem;
   margin-right: 5px;
   border-radius: 3px;
@@ -763,10 +759,6 @@ body {
   line-height: 1.5;
 }
 
-.favorite-list a {
-  background-color: aqua;
-  /* flex-grow: 1; */
-}
 
 .up,
 .stop,
@@ -774,17 +766,38 @@ body {
   display: inline-block;
   width: 20px;
   height: 11px;
-  margin-left: auto;
-  background: lime url("./images/rank.png") no-repeat 100% 0;
+  background: url("./images/rank.png") no-repeat 100% 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 8px;
+  margin-top: -6px;
 }
 
 .stop {
-  background-position: 100% 48%;
+  background-position: 100% 50%;
 }
 
 .down {
   background-position: 100% 100%;
 }
+
+
+
+/* .no1::before {
+  content: "1";
+}
+.no2::before {
+  content: "2";
+}
+.no3::before {
+  content: "3";
+}
+.no4::before {
+  content: "4";
+} */
+
+
 
 .favorite-more {
   position: absolute;
